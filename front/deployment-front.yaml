@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-ms
+spec:
+  selector:
+   matchLabels:
+     app: front-ms
+  template:
+    metadata:
+      labels:
+        app: front-ms
+    spec:
+      containers:
+        - name: front-ms
+          image: sepulveda/node:v1
+          ports:
+            - containerPort: 8080
+         
