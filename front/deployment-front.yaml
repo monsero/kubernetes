@@ -15,4 +15,4 @@ spec:
         - name: front-ms
           image: sepulveda/node:v1
           ports:
-            - containerPort: 4000
+            - containerPort: 8080
