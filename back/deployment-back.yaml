@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: back-ms
 spec:
-  
   selector:
    matchLabels:
      app: back-ms
@@ -18,24 +17,24 @@ spec:
           ports:
             - containerPort: 8100
           env:
-            - name: host
+            - name: DB_HOST
               value: mysql
-            - name: database
+            - name: DB_DATABASE
               valueFrom:
                 configMapKeyRef:
                   name: mysql-config
                   key: MYSQL_DATABASE
-            - name: port
+            - name: DB_PORT
               valueFrom:
                 configMapKeyRef:
                   name: mysql-config
                   key: DB_PORT
-            - name: username
+            - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
                   key: MYSQL_USER
-            - name: password
+            - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
