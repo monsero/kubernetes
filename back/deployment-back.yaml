@@ -32,7 +32,7 @@ spec:
                   key: DB_PORT
             - name: username
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   name: mysql-secret
                   key: MYSQL_USER
             - name: password
