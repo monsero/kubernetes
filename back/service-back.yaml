@@ -9,6 +9,6 @@ spec:
     app: back-ms
   ports:
     - protocol: TCP
-      nodePort: 30001
+      nodePort: 30004
       port: 8100
       targetPort: 8100
