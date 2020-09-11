@@ -43,4 +43,4 @@ spec:
       volumes:
         - name: mysql-vol
           persistentVolumeClaim:
-            claimName: bdmysql-pvc
+            claimName: mysql-pvc
