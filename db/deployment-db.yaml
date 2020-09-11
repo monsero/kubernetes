@@ -12,31 +12,31 @@ spec:
         app: mysql-db
     spec:
       containers:
-        - name: mysql
-          image: sepulveda/mysql:v1
-          ports:
-            - containerPort: 3306
-          env:
-            - name: MysqlDB
-              valueFrom:
-                configMapKeyRef:
-                  name: mysql-config
-                  key: MYSQL_DATABASE
-            - name: MysqlUser
-              valueFrom:
-                configMapKeyRef:
-                  name: mysql-secret
-                  key: MYSQL_USER
-            - name: MysqlPassword
-              valueFrom:
-                secretKeyRef:
-                  name: mysql-secret
-                  key: MYSQL_PASSWORD
-          volumeMounts:
-            - mountPath: /var/lib/mysql/
-              name: mysql-vol
-              subPath: mysql
-        volumes:
-          - name: mysql-vol
-            persistentVolumeClaim:
-            claimName: mysql-pvc
+      - name: mysql
+        image: sepulveda/mysql:v1
+        ports:
+        - containerPort: 3306
+        env:
+        - name: MysqlDB
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: MYSQL_DATABASE
+        - name: MysqlUser
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-secret
+              key: MYSQL_USER
+        - name: MysqlPassword
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQL_PASSWORD
+        volumeMounts:
+        - mountPath: /var/lib/mysql/
+          name: mysql-vol
+          subPath: mysql
+      volumes:
+      - name: mysql-vol
+        persistentVolumeClaim:
+          claimName: mysql-pvc
