@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mysql-pv
+  name: mysql-mv
   labels:
-    name: mysql-pv
+    name: mysql-mv
 spec:
   capacity:
     storage: 100M
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc
+  name: mysql-mvc
   labels:
     type: local
 spec:
@@ -26,4 +26,4 @@ spec:
   resources:
     requests:
       storage: 100M
-  volumeName: mysql-pv
+  volumeName: mysql-mv

@@ -15,13 +15,13 @@ spec:
         - name: mysql-db
           image: sepulveda/mysql:v1
           ports:
-            - containerPort: 33069
+            - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mysql-secret
-                  key: MYSQL_ROOT_PASSWORD 
+                  key: MYSQL_ROOT_PASSWORD
             - name: database
               valueFrom:
                 configMapKeyRef:
@@ -43,4 +43,4 @@ spec:
       volumes:
         - name: mysql-vol
           persistentVolumeClaim:
-            claimName: mysql-pvc
+            claimName: mysql-mvc

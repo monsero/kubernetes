@@ -11,5 +11,5 @@ spec:
   ports:
     - protocol: TCP
       nodePort: 30000
-      port: 33069
-      targetPort: 33069
+      port: 3306
+      targetPort: 3306
